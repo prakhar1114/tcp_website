@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheCoffeePlaces - AI-Driven Hospitality Engagement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2D3436;
+      --secondary: #7F5AF0;
+      --accent: #4C9EEB;
+      --background: #FAFAFA;
+      --text: #2D3436;
+      --gradient: linear-gradient(135deg, var(--secondary), var(--accent));
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+    }
+
+    header {
+      background: var(--gradient);
+      padding: 6rem 1rem;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+      opacity: 0.3;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      padding: 2rem;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient);
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--gradient);
+      border-radius: 20px;
+      color: white;
+    }
+
+    .cta p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta a {
+      background: white;
+      color: var(--secondary);
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    footer a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 4rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      header p {
+        font-size: 1.25rem;
+      }
+      
+      main {
+        padding: 2rem 1rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      .cta {
+        padding: 2rem 1rem;
+      }
+      
+      .cta p {
+        font-size: 1.25rem;
+      }
+      
+      .cta a {
+        padding: 0.875rem 2rem;
+        font-size: 1.125rem;
+      }
+    }
+
+    /* Add smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Add selection color */
+    ::selection {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .app-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .app-info, .app-requirements, .app-support {
+      background: rgba(127, 90, 240, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+    }
+
+    .app-support {
+      margin-top: 2rem;
+    }
+
+    .app-details h3 {
+      color: var(--secondary);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .app-support a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .app-support a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .app-details {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TheCoffeePlaces</h1>
+    <p>Revolutionizing Hospitality with AI-Driven Engagement</p>
+  </header>
+
+  <main>
+    <!-- What We Do -->
+    <section id="what-we-do">
+      <h2>What We Do</h2>
+      <p>
+        TheCoffeePlaces is a unified platform for cafés and restaurants to engage directly with customers. Our solution enables:
+      </p>
+      <ul>
+        <li>Cost-effective, digital loyalty programs (no expensive custom builds)</li>
+        <li>Curated events and targeted deals to build vibrant communities</li>
+        <li>AI-powered personalization that tailors every dining experience</li>
+      </ul>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <ul>
+        <li><strong>Check-In:</strong> Customers check in via our app, alerting the café instantly.</li>
+        <li><strong>Loyalty:</strong> Digital stamp cards update automatically.</li>
+        <li><strong>AI Insights:</strong> Baristas access real-time customer preferences.</li>
+        <li><strong>Personalized Upselling:</strong> Tailored recommendations boost sales.</li>
+        <li><strong>Event Management:</strong> Schedule and promote exclusive events and deals.</li>
+        <li><strong>Feedback Loop:</strong> In-app feedback refines future experiences.</li>
+      </ul>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <ul>
+        <li>All-in-one platform for loyalty, events, and AI personalization</li>
+        <li>Empowers businesses to engage directly with customers</li>
+        <li>Builds a thriving multi-sided network for greater visibility and customer loyalty</li>
+      </ul>
+    </section>
+
+    <!-- About Us -->
+    <section id="about-us">
+      <h2>About Us</h2>
+      <p>
+        Founded by experienced developers and AI engineers, TheCoffeePlaces transforms hospitality for small businesses. We provide advanced tools to build genuine customer connections in a competitive market.
+      </p>
+    </section>
+
+    <!-- Download App -->
+    <section id="download-app">
+      <h2>Get Started Today</h2>
+      <p>Download TheCoffeePlaces app and join our growing community of cafes and coffee enthusiasts.</p>
+
+      <div class="app-support">
+        <h3>Support</h3>
+        <p>Need help? Contact our support team at <a href="mailto:thecoffeeplaces@gmail.com">thecoffeeplaces@gmail.com</a></p>
+        <p>Version 1.0.0</p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="cta">
+      <p>Ready to transform your customer experience?</p>
+      <a href="mailto:thecoffeeplaces@gmail.com">Contact Us Today</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 TheCoffeePlaces. All rights reserved. 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms & Conditions</a>
+    </p>
+  </footer>
+</body>
+</html>
