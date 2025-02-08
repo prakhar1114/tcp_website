@@ -2,334 +2,639 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TheCoffeePlaces - AI-Driven Hospitality Engagement</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TheCoffeePlaces - AI-Driven Hospitality</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary: #2D3436;
-      --secondary: #7F5AF0;
-      --accent: #4C9EEB;
-      --background: #FAFAFA;
-      --text: #2D3436;
-      --gradient: linear-gradient(135deg, var(--secondary), var(--accent));
+      --primary: #8C8DFC;  /* DeepMind purple */
+      --secondary: #4CC9F0;  /* DeepMind blue */
+      --text: #FFFFFF;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --background: #0F1115;  /* Deep dark background */
+      --surface: #1A1D21;  /* Card background */
+      --gradient: linear-gradient(135deg, #8C8DFC, #4CC9F0);
+      --card-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, sans-serif;
       color: var(--text);
+      line-height: 1.6;
       background-color: var(--background);
     }
 
-    header {
-      background: var(--gradient);
-      padding: 6rem 1rem;
-      text-align: center;
-      color: white;
+    /* Add at the beginning of style section */
+    html {
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    /* Add wrapper for snap scrolling */
+    .scroll-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    /* Make sections snap */
+    .snap-section {
+      scroll-snap-align: start;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
-      overflow: hidden;
     }
 
-    header::after {
-      content: '';
-      position: absolute;
+    /* Update existing sections */
+    .hero {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      background: linear-gradient(rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0.9)),
+                  url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238C8DFC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      text-align: left;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
       width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
-      opacity: 0.3;
+      padding-left: 4rem;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 3.5rem;
+    .hero h1 {
+      font-size: 4rem;
       font-weight: 800;
       letter-spacing: -1px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 0;
+      color: var(--text);
+      text-align: left;
+    }
+
+    .features {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+      padding: 6rem 2rem 0 2rem;
+      margin-bottom: 0;
+    }
+
+    .contact {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Adjust feature sections for better fit */
+    .feature-section {
+      margin-bottom: 2rem;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Add scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--text-secondary);
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+      }
+      40% {
+        transform: translateY(-30px) translateX(-50%);
+      }
+      60% {
+        transform: translateY(-15px) translateX(-50%);
+      }
+    }
+
+    /* Adjust media queries for better mobile experience */
+    @media (max-width: 768px) {
+      .section-title {
+        margin-bottom: 2rem;
+      }
+      
+      .cards-container {
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-content {
+        padding-left: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    /* Team Section */
+    .team-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .team-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .founder-section {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .founder-bio {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    .founder-bio p {
+      margin-bottom: 1.5rem;
+    }
+
+    .founder {
+      margin: 0 auto;
+      max-width: 300px;
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      border: 1px solid var(--card-border);
+    }
+
+    .founder:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 0 30px rgba(140, 141, 252, 0.1);
+    }
+
+    .founder img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .founder h3 {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .founder p {
+      color: var(--primary);
+      font-weight: 600;
       margin-bottom: 1rem;
     }
 
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
+    .social-links {
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: var(--text);
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Features Section styling remains the same */
+    
+    /* Add new contact section */
+    .contact {
+      padding: 4rem 2rem;
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
       max-width: 600px;
       margin: 0 auto;
     }
 
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    section {
-      margin-bottom: 4rem;
-      padding: 2rem;
-      border-radius: 20px;
-      background: white;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-      transition: transform 0.2s ease;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-      font-weight: 700;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
       display: block;
-      width: 60px;
-      height: 4px;
-      background: var(--gradient);
-      margin-top: 0.5rem;
-      border-radius: 2px;
+      margin: 1rem 0;
+      transition: opacity 0.3s ease;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
+    .contact-info a:hover {
+      opacity: 0.8;
     }
 
-    ul li {
-      padding: 0.5rem 0;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    ul li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--secondary);
-    }
-
-    .cta {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: var(--gradient);
-      border-radius: 20px;
-      color: white;
-    }
-
-    .cta p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .cta a {
-      background: white;
-      color: var(--secondary);
-      text-decoration: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.25rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .cta a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
+    /* Feature Cards */
+    .features {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 2rem;
     }
 
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 1rem;
-      opacity: 0.8;
-      transition: opacity 0.2s ease;
+    .feature-section:nth-child(2) .section-title {
+      background: rgba(44, 182, 125, 0.05);
     }
 
-    footer a:hover {
-      opacity: 1;
+    .section-title {
+      text-align: center;
+      padding: 2rem;
+      background: var(--surface);
+      border-radius: 20px;
+      margin-bottom: 3rem;
+      border: 1px solid var(--card-border);
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding: 4rem 1rem;
-      }
-      
-      header h1 {
-        font-size: 2.5rem;
-      }
-      
-      header p {
-        font-size: 1.25rem;
-      }
-      
-      main {
-        padding: 2rem 1rem;
-      }
-      
-      section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.75rem;
-      }
-      
-      .cta {
-        padding: 2rem 1rem;
-      }
-      
-      .cta p {
-        font-size: 1.25rem;
-      }
-      
-      .cta a {
-        padding: 0.875rem 2rem;
-        font-size: 1.125rem;
-      }
+    .section-title h2 {
+      font-size: 2rem;
+      margin: 1rem 0;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Add smooth scrolling */
-    html {
-      scroll-behavior: smooth;
+    .section-title p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
     }
 
-    /* Add selection color */
-    ::selection {
-      background: var(--secondary);
-      color: white;
-    }
-
-    .app-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .app-info, .app-requirements, .app-support {
-      background: rgba(127, 90, 240, 0.05);
-      padding: 1.5rem;
-      border-radius: 12px;
-    }
-
-    .app-support {
-      margin-top: 2rem;
-    }
-
-    .app-details h3 {
-      color: var(--secondary);
-      font-size: 1.25rem;
+    .section-title .feature-icon {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
-    .app-support a {
-      color: var(--secondary);
-      text-decoration: none;
+    .feature-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      height: 100%;
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+      box-shadow: 0 0 30px rgba(140, 141, 252, 0.1);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 50px;
       font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+      margin-top: 1.5rem;
     }
 
-    .app-support a:hover {
-      text-decoration: underline;
+    .cta-button:hover {
+      transform: scale(1.05);
     }
 
-    @media (max-width: 768px) {
-      .app-details {
-        grid-template-columns: 1fr;
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 2rem;
+      background: var(--surface);
+      width: 100%;
+      margin-bottom: 0;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .contact-info a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .contact-info a:hover {
+      color: var(--primary);
+      opacity: 1;
+    }
+
+    footer p {
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    footer .social-links {
+      margin: 0;
+    }
+
+    footer .social-links a {
+      color: white;
+      opacity: 0.7;
+      margin: 0 0.5rem;
+      font-size: 1.1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    footer .social-links a:hover {
+      opacity: 1;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+
+      .contact-info {
+        flex-direction: column;
         gap: 1rem;
       }
+
+      .contact-info a {
+        justify-content: center;
+      }
+    }
+
+    /* Remove the connect section styles */
+    .connect-section,
+    .contact-links {
+      display: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .founder-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .founder {
+        margin: 0 auto;
+      }
+
+      .founder-bio {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* Add subtle animations */
+    .feature-card, .founder {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Add gradient borders on hover */
+    .feature-card:hover, .founder:hover {
+      background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                  var(--gradient) border-box;
+      border: 1px solid transparent;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>TheCoffeePlaces</h1>
-    <p>Revolutionizing Hospitality with AI-Driven Engagement</p>
-  </header>
-
-  <main>
-    <!-- What We Do -->
-    <section id="what-we-do">
-      <h2>What We Do</h2>
-      <p>
-        TheCoffeePlaces is a unified platform for cafés and restaurants to engage directly with customers. Our solution enables:
-      </p>
-      <ul>
-        <li>Cost-effective, digital loyalty programs (no expensive custom builds)</li>
-        <li>Curated events and targeted deals to build vibrant communities</li>
-        <li>AI-powered personalization that tailors every dining experience</li>
-      </ul>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works">
-      <h2>How It Works</h2>
-      <ul>
-        <li><strong>Check-In:</strong> Customers check in via our app, alerting the café instantly.</li>
-        <li><strong>Loyalty:</strong> Digital stamp cards update automatically.</li>
-        <li><strong>AI Insights:</strong> Baristas access real-time customer preferences.</li>
-        <li><strong>Personalized Upselling:</strong> Tailored recommendations boost sales.</li>
-        <li><strong>Event Management:</strong> Schedule and promote exclusive events and deals.</li>
-        <li><strong>Feedback Loop:</strong> In-app feedback refines future experiences.</li>
-      </ul>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="why-choose-us">
-      <h2>Why Choose Us</h2>
-      <ul>
-        <li>All-in-one platform for loyalty, events, and AI personalization</li>
-        <li>Empowers businesses to engage directly with customers</li>
-        <li>Builds a thriving multi-sided network for greater visibility and customer loyalty</li>
-      </ul>
-    </section>
-
-    <!-- About Us -->
-    <section id="about-us">
-      <h2>About Us</h2>
-      <p>
-        Founded by experienced developers and AI engineers, TheCoffeePlaces transforms hospitality for small businesses. We provide advanced tools to build genuine customer connections in a competitive market.
-      </p>
-    </section>
-
-    <!-- Download App -->
-    <section id="download-app">
-      <h2>Get Started Today</h2>
-      <p>Download TheCoffeePlaces app and join our growing community of cafes and coffee enthusiasts.</p>
-
-      <div class="app-support">
-        <h3>Support</h3>
-        <p>Need help? Contact our support team at <a href="mailto:thecoffeeplaces@gmail.com">thecoffeeplaces@gmail.com</a></p>
-        <p>Version 1.0.0</p>
+  <div class="scroll-container">
+    <!-- Page 1: Hero -->
+    <section class="hero snap-section">
+      <div class="hero-content">
+        <h1>TheCoffeePlaces</h1>
+        <p><i>Create memorable moments, build lasting loyalty</i></p>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section id="cta" class="cta">
-      <p>Ready to transform your customer experience?</p>
-      <a href="mailto:thecoffeeplaces@gmail.com">Contact Us Today</a>
-    </section>
-  </main>
+    <!-- Page 2: Smart Marketing -->
+    <section class="features snap-section">
+      <div class="section-title">
+        <i class="fas fa-bullhorn feature-icon"></i>
+        <h2>Smart Marketing</h2>
+        <p>Grow your business with AI-powered tools</p>
+      </div>
 
-  <footer>
-    <p>© 2025 TheCoffeePlaces. All rights reserved. 
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Terms & Conditions</a>
-    </p>
-  </footer>
+      <div class="cards-container">
+        <div class="feature-card">
+          <i class="fas fa-star feature-icon"></i>
+          <h3>Smart Loyalty</h3>
+          <p>Digital stamp cards with AI rewards</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-calendar-alt feature-icon"></i>
+          <h3>Events</h3>
+          <p>Build community experiences</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <h3>Analytics</h3>
+          <p>Data-driven campaign insights</p>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Page 3: AI Hospitality -->
+    <section class="features snap-section">
+      <div class="section-title">
+        <i class="fas fa-concierge-bell feature-icon"></i>
+        <h2>AI Hospitality</h2>
+        <p>Deliver personalized guest experiences</p>
+      </div>
+
+      <div class="cards-container">
+        <div class="feature-card">
+          <i class="fas fa-qrcode feature-icon"></i>
+          <h3>Smart Check-in</h3>
+          <p>Seamless arrival with QR codes</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-robot feature-icon"></i>
+          <h3>AI Recommendations</h3>
+          <p>Personalized menu suggestions</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fas fa-magic feature-icon"></i>
+          <h3>Smart Service</h3>
+          <p>AI-powered guest assistance</p>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- Page 4: Meet the Founder -->
+    <section class="team snap-section">
+      <div class="team-container">
+        <h2>Meet the Founder</h2>
+        <div class="founder-section">
+          <div class="founder">
+            <img src="assets/profile.jpg" alt="Prakhar Jain">
+            <h3>Prakhar Jain</h3>
+            <p>Founder, TheCoffeePlaces</p>
+            <div class="social-links">
+              <a href="https://prakhar1114.github.io/prakharjain/" target="_blank"><i class="fas fa-globe"></i></a>
+              <a href="prakharjain1114@gmail.com"><i class="fas fa-envelope"></i></a>
+              <a href="https://www.linkedin.com/in/prakhar-jain-b34805121/"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="founder-bio">
+            <p>I'm a coffee geek, FPV pilot, and AI engineer based in Bangalore. After graduating in Mechanical Engineering from IIT Bombay, I worked on AI healthcare solutions at Qure.ai.</p>
+            <p>Now, I'm channeling my passion for code, robotics, and a great cup of coffee into TheCoffeePlaces, a platform that reimagines how cafés and restaurants build loyalty and engage with their customers.</p>
+            <p>When I'm not coding, you'll find me tinkering with drones and racing FPVs—because I love pushing technology (and caffeine) to its limits.</p>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="footer-content">
+          <div class="contact-info">
+            <a href="mailto:thecoffeeplaces@gmail.com"><i class="fas fa-envelope"></i> thecoffeeplaces@gmail.com</a>
+            <a href="https://prakhar1114.github.io/prakharjain/" target="_blank"><i class="fas fa-globe"></i> Visit Portfolio</a>
+          </div>
+          <p>© 2024 TheCoffeePlaces</p>
+          <!-- <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div> -->
+        </div>
+      </footer>
+    </section>
+  </div>
 </body>
 </html>
