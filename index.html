@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary: #8C8DFC;  /* DeepMind purple */
-      --secondary: #4CC9F0;  /* DeepMind blue */
-      --text: #FFFFFF;
-      --text-secondary: rgba(255, 255, 255, 0.7);
-      --background: #0F1115;  /* Deep dark background */
-      --surface: #1A1D21;  /* Card background */
-      --gradient: linear-gradient(135deg, #8C8DFC, #4CC9F0);
-      --card-border: rgba(255, 255, 255, 0.1);
+      --primary: #C2773E;  /* Warm coffee brown */
+      --secondary: #F4D03F;  /* Sunny yellow */
+      --text: #2C3E50;  /* Dark blue-gray for text */
+      --text-secondary: rgba(44, 62, 80, 0.7);  /* Transparent dark text */
+      --background: #FDF6E3;  /* Soft cream background */
+      --surface: #FFFFFF;  /* Pure white for cards */
+      --gradient: linear-gradient(135deg, #C2773E, #F4D03F);  /* Coffee to sunshine gradient */
+      --card-border: rgba(194, 119, 62, 0.1);  /* Light coffee border */
     }
 
     * {
@@ -32,15 +32,16 @@
 
     /* Add at the beginning of style section */
     html {
-      scroll-snap-type: y mandatory;
       scroll-behavior: smooth;
     }
 
-    /* Add wrapper for snap scrolling */
+    /* Update scroll container */
     .scroll-container {
       height: 100vh;
-      overflow-y: scroll;
+      overflow-y: auto;
       scroll-snap-type: y mandatory;
+      position: relative;
+      -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
     }
 
     /* Make sections snap */
@@ -57,39 +58,90 @@
     .hero {
       min-height: 100vh;
       scroll-snap-align: start;
-      background: linear-gradient(rgba(15, 17, 21, 0.9), rgba(15, 17, 21, 0.9)),
-                  url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238C8DFC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 2rem;
-      text-align: left;
+      justify-content: flex-end;
+      padding: 4rem 2rem;
+      position: relative;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('assets/main_theme.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      overflow: hidden;
     }
 
     .hero-content {
       max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
-      padding-left: 4rem;
+      padding: 0 2rem;
+      z-index: 2;
+      text-align: left;
+      margin-bottom: 4rem;
+      position: relative;
     }
 
-    .hero h1 {
-      font-size: 4rem;
+    .hero-content h1 {
+      font-size: 5rem;
       font-weight: 800;
       letter-spacing: -1px;
+      margin-bottom: 1rem;
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
       text-align: left;
     }
 
-    .hero p {
-      font-size: 1.5rem;
-      max-width: 600px;
+    .hero-content p {
+      font-size: 1.8rem;
+      white-space: nowrap;  /* Keep text in one line */
       margin: 0;
-      color: var(--text);
+      color: white;
+      font-style: italic;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
       text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;  /* Add ellipsis if text overflows */
+    }
+
+    /* Update scroll indicator for better visibility on image background */
+    .scroll-indicator {
+      color: white;
+      opacity: 0.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Adjust hero for mobile */
+    @media (max-width: 900px) {
+      .hero-content {
+        padding: 0 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.4rem;
+        white-space: normal;  /* Allow wrapping on very small screens */
+      }
+
+      .hospitality-card {
+        flex-direction: column;
+      }
+
+      .card-content h2 {
+        font-size: 2rem;
+        white-space: normal;
+      }
+    }
+
+    /* Remove the old hero card styles */
+    .hero .hospitality-card {
+      display: none;
     }
 
     .features {
@@ -271,7 +323,7 @@
     .contact {
       padding: 4rem 2rem;
       background: var(--gradient);
-      color: white;
+      color: var(--surface);
       text-align: center;
     }
 
@@ -286,7 +338,7 @@
     }
 
     .contact-info a {
-      color: white;
+      color: var(--surface);
       text-decoration: none;
       font-size: 1.2rem;
       display: block;
@@ -449,7 +501,7 @@
     }
 
     footer .social-links a {
-      color: white;
+      color: var(--text);
       opacity: 0.7;
       margin: 0 0.5rem;
       font-size: 1.1rem;
@@ -518,87 +570,397 @@
                   var(--gradient) border-box;
       border: 1px solid transparent;
     }
+
+    /* Update navigation styles */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(253, 246, 227, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 1000;
+      transform: translateY(-100%);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(194, 119, 62, 0.1);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .top-nav.visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 3rem;
+      justify-content: flex-start;  /* Align to left like DeepMind */
+      align-items: center;
+    }
+
+    .nav-item {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      transition: all 0.2s ease;
+      position: relative;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-item:hover {
+      color: var(--text);
+    }
+
+    /* DeepMind-style underline indicator */
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+      transform-origin: left;
+    }
+
+    .nav-item:hover::after {
+      transform: scaleX(0.3);
+    }
+
+    .nav-item.active {
+      color: var(--text);
+      background: none;
+      border: none;
+    }
+
+    .nav-item.active::after {
+      transform: scaleX(1);
+    }
+
+    @media (max-width: 768px) {
+      .nav-content {
+        padding: 0 1rem;
+        gap: 1.5rem;
+        justify-content: center;  /* Center on mobile */
+      }
+
+      .nav-item {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* AI Hospitality Section */
+    .ai-hospitality {
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(253, 246, 227, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hospitality-card {
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row-reverse;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border: 1px solid var(--card-border);
+      position: relative;
+    }
+
+    .card-image {
+      flex: 1;
+      position: relative;
+      min-height: 400px;
+    }
+
+    .card-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, var(--surface));
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    .card-content {
+      flex: 1;
+      padding: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 900px) {
+      .hospitality-card {
+        flex-direction: column;
+      }
+
+      .card-image {
+        min-height: 250px;
+      }
+
+      .card-image::after {
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(to bottom, transparent, var(--surface));
+      }
+
+      .card-content {
+        padding: 2rem;
+      }
+
+      .card-content h2 {
+        font-size: 2rem;
+        white-space: normal;
+      }
+    }
+
+    /* Brand Loyalty Section */
+    .brand-loyalty {
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(253, 246, 227, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Make the card hover effect more engaging */
+    .hospitality-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hospitality-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(194, 119, 62, 0.15);
+    }
+
+    /* Add subtle animation to the gradient overlay */
+    .card-image::after {
+      transition: opacity 0.3s ease;
+    }
+
+    .hospitality-card:hover .card-image::after {
+      opacity: 0.9;
+    }
+
+    /* Enhance text animation on hover */
+    .card-content h2,
+    .card-content p {
+      transition: transform 0.3s ease;
+    }
+
+    .hospitality-card:hover .card-content h2 {
+      transform: translateY(-2px);
+    }
+
+    .hospitality-card:hover .card-content p {
+      transform: translateY(2px);
+    }
+
+    /* Happy Customers Section */
+    .happy-customers {
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(253, 246, 227, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Add alternating layout for visual interest */
+    .happy-customers .hospitality-card {
+      flex-direction: row-reverse;
+    }
+
+    .happy-customers .card-image::after {
+      left: 0;
+      right: auto;
+      background: linear-gradient(to left, transparent, var(--surface));
+    }
+
+    /* Adjust mobile layout */
+    @media (max-width: 900px) {
+      .happy-customers .hospitality-card {
+        flex-direction: column;
+      }
+
+      .happy-customers .card-image::after {
+        width: 100%;
+        height: 50%;
+        left: 0;
+        background: linear-gradient(to bottom, transparent, var(--surface));
+      }
+    }
+
+    /* Add fluid background animation */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        315deg,
+        rgba(194, 119, 62, 0.05) 0%,
+        rgba(244, 208, 63, 0.05) 74%
+      );
+      animation: gradient 15s ease infinite;
+      background-size: 400% 400%;
+      z-index: -1;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Add subtle noise texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Add geometric pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Cpath d='M30 0L0 30h60L30 0zm0 60L0 30h60L30 60z'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.2;
+      z-index: 1;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <!-- Update navigation order -->
+  <nav class="top-nav">
+    <div class="nav-content">
+      <a href="#hospitality" class="nav-item">AI Hospitality</a>
+      <a href="#loyalty" class="nav-item">Building Brand Loyalty</a>
+      <a href="#happy-customers" class="nav-item">Happy Customers</a>
+      <a href="#founder" class="nav-item">Meet the Founder</a>
+    </div>
+  </nav>
+
   <div class="scroll-container">
-    <!-- Page 1: Hero -->
+    <!-- Hero section stays first -->
     <section class="hero snap-section">
       <div class="hero-content">
         <h1>TheCoffeePlaces</h1>
-        <p><i>Create memorable moments, build lasting loyalty</i></p>
+        <p>Create memorable moments, build lasting loyalty</p>
       </div>
       <div class="scroll-indicator">
         <i class="fas fa-chevron-down"></i>
       </div>
     </section>
 
-    <!-- Page 2: Smart Marketing -->
-    <section class="features snap-section">
-      <div class="section-title">
-        <i class="fas fa-bullhorn feature-icon"></i>
-        <h2>Smart Marketing</h2>
-        <p>Grow your business with AI-powered tools</p>
-      </div>
-
-      <div class="cards-container">
-        <div class="feature-card">
-          <i class="fas fa-star feature-icon"></i>
-          <h3>Smart Loyalty</h3>
-          <p>Digital stamp cards with AI rewards</p>
+    <!-- 1. AI Hospitality -->
+    <section class="ai-hospitality snap-section" id="hospitality">
+      <div class="hospitality-card">
+        <div class="card-image">
+          <img src="assets/ai_hospitality.png" alt="AI-Driven Hospitality">
         </div>
-
-        <div class="feature-card">
-          <i class="fas fa-calendar-alt feature-icon"></i>
-          <h3>Events</h3>
-          <p>Build community experiences</p>
+        <div class="card-content">
+          <h2>Next-Level Hospitality with AI</h2>
+          <p>Through AI-driven insights, each returning customer's preferences and past orders are captured in a concise profile, allowing staff to suggest tailored options and effectively upsell items. Loyal customers can even check in early, so cafés prepare special dishes or freebies in advance. This streamlined, data-driven approach not only boosts sales but also keeps guests delighted, as every visit refines their future experience.</p>
         </div>
-
-        <div class="feature-card">
-          <i class="fas fa-chart-line feature-icon"></i>
-          <h3>Analytics</h3>
-          <p>Data-driven campaign insights</p>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
       </div>
     </section>
 
-    <!-- Page 3: AI Hospitality -->
-    <section class="features snap-section">
-      <div class="section-title">
-        <i class="fas fa-concierge-bell feature-icon"></i>
-        <h2>AI Hospitality</h2>
-        <p>Deliver personalized guest experiences</p>
-      </div>
-
-      <div class="cards-container">
-        <div class="feature-card">
-          <i class="fas fa-qrcode feature-icon"></i>
-          <h3>Smart Check-in</h3>
-          <p>Seamless arrival with QR codes</p>
+    <!-- 2. Brand Loyalty -->
+    <section class="brand-loyalty snap-section" id="loyalty">
+      <div class="hospitality-card">
+        <div class="card-image">
+          <img src="assets/brand-loyalty.png" alt="Building Brand Loyalty">
         </div>
-
-        <div class="feature-card">
-          <i class="fas fa-robot feature-icon"></i>
-          <h3>AI Recommendations</h3>
-          <p>Personalized menu suggestions</p>
+        <div class="card-content">
+          <h2>Building Brand Loyalty</h2>
+          <p>Quickly launch Starbucks-style programs, like "Free Espresso after 3 visits in 30 days," and reward your VIP customers with exclusive benefits. You can also create flash deals or host special events just for certain groups. By sending timely push notifications and direct messages, you'll keep customers engaged, recognize their loyalty, and elevate your brand image.</p>
         </div>
-
-        <div class="feature-card">
-          <i class="fas fa-magic feature-icon"></i>
-          <h3>Smart Service</h3>
-          <p>AI-powered guest assistance</p>
-        </div>
-      </div>
-      <div class="scroll-indicator">
-        <i class="fas fa-chevron-down"></i>
       </div>
     </section>
 
-    <!-- Page 4: Meet the Founder -->
-    <section class="team snap-section">
+    <!-- 3. Happy Customers -->
+    <section class="happy-customers snap-section" id="happy-customers">
+      <div class="hospitality-card">
+        <div class="card-image">
+          <img src="assets/happy_customers.jpg" alt="Happy Customers">
+        </div>
+        <div class="card-content">
+          <h2>Happy Customers</h2>
+          <p>By automatically updating stamp cards and distributing rewards, your customers feel recognized and valued. Timely notifications invite them to special events, helping them become part of a culinary community. Every visit improves their experience through feedback loops, forging a deeper connection between guests and your brand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder section stays last -->
+    <section class="team snap-section" id="founder">
       <div class="team-container">
         <h2>Meet the Founder</h2>
         <div class="founder-section">
@@ -636,5 +998,58 @@
       </footer>
     </section>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nav = document.querySelector('.top-nav');
+      const sections = document.querySelectorAll('.snap-section');
+      const navItems = document.querySelectorAll('.nav-item');
+      const scrollContainer = document.querySelector('.scroll-container');
+      
+      // Show/hide nav based on scroll position
+      function toggleNav() {
+        if (scrollContainer.scrollTop > window.innerHeight * 0.5) {
+          nav.classList.add('visible');
+        } else {
+          nav.classList.remove('visible');
+        }
+      }
+
+      // Update active nav item based on current section
+      function updateActiveSection() {
+        const currentPosition = scrollContainer.scrollTop;
+        
+        sections.forEach((section) => {
+          if (!section.id) return;
+          
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (currentPosition >= sectionTop - window.innerHeight/2 && 
+              currentPosition < sectionTop + sectionHeight - window.innerHeight/2) {
+            navItems.forEach(item => item.classList.remove('active'));
+            const activeNav = document.querySelector(`.nav-item[href="#${section.id}"]`);
+            if (activeNav) activeNav.classList.add('active');
+          }
+        });
+      }
+
+      // Add scroll event listeners to the scroll container
+      scrollContainer.addEventListener('scroll', () => {
+        toggleNav();
+        updateActiveSection();
+      });
+
+      // Update click handlers for smooth scrolling
+      navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = item.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
