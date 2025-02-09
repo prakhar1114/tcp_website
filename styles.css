@@ -584,7 +584,7 @@ footer .social-links a:hover {
     background: white;
     border-radius: 20px;
     border: 1px solid var(--card-border);
-    padding: 2rem;
+    padding: 1rem 0.5rem;
     margin: 0 1rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
@@ -1001,7 +1001,7 @@ body::after {
   }
 
   .founder {
-    padding: 1rem;  /* Reduced padding */
+    padding: 1rem 0rem;  /* Reduced padding */
     margin: 0 auto;
     max-width: 280px;  /* Limit width on mobile */
   }
@@ -1022,9 +1022,10 @@ body::after {
   }
 
   .founder-bio {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0;
     line-height: 1.5;
+    /* text-align: left; */
   }
 
   .founder-bio p {
