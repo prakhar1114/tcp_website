@@ -1,0 +1,1153 @@
+:root {
+  --primary: #C2773E;  /* Warm coffee brown */
+  --secondary: #F4D03F;  /* Sunny yellow */
+  --text: #2C3E50;  /* Dark blue-gray for text */
+  --text-secondary: rgba(44, 62, 80, 0.7);  /* Transparent dark text */
+  /* --background: rgba(253, 246, 227, 0.7); 
+  --surface: rgba(255, 255, 255, 0.9);     /* More transparent */
+  --gradient: linear-gradient(135deg, #C2773E, #F4D03F);  /* Coffee to sunshine gradient */
+  --card-border: rgba(194, 119, 62, 0.1);  /* Light coffee border */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--background);
+}
+
+/* Add at the beginning of style section */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Update scroll container */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  position: relative;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+}
+
+.vanta-background {
+
+}
+
+/* Make sections snap */
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background: rgba(253, 246, 227, 0.5);    /* More transparent */
+  backdrop-filter: blur(5px);               /* Less blur */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Update existing sections */
+.hero {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem 2rem;
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+              url('assets/main_theme.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2;
+  text-align: left;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  white-space: nowrap;  /* Keep text in one line */
+  margin: 0;
+  color: white;
+  font-style: italic;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;  /* Add ellipsis if text overflows */
+}
+
+/* Update scroll indicator for better visibility on image background */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-30px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+}
+
+/* Adjust hero for mobile */
+@media (max-width: 900px) {
+  .hero-content {
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.4rem;
+    white-space: normal;  /* Allow wrapping on very small screens */
+  }
+
+  .hospitality-card {
+    flex-direction: column;
+  }
+
+  .card-content h2 {
+    font-size: 2rem;
+    white-space: normal;
+  }
+}
+
+/* Remove the old hero card styles */
+.hero .hospitality-card {
+  display: none;
+}
+
+.features {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  padding: 6rem 2rem 0 2rem;
+  margin-bottom: 0;
+}
+
+.contact {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Adjust feature sections for better fit */
+.feature-section {
+  margin-bottom: 2rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Add scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-30px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+}
+
+/* Adjust media queries for better mobile experience */
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 2rem;
+  }
+  
+  .cards-container {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content {
+    padding-left: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Team Section */
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.team-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founder-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.founder-bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--card-border);
+}
+
+.founder-bio p {
+  margin-bottom: 1.5rem;
+}
+
+.founder {
+  margin: 0 auto;
+  max-width: 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--card-border);
+}
+
+.founder:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(140, 141, 252, 0.1);
+  background: white;
+}
+
+.founder img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+.founder h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.founder p {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--text);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+}
+
+/* Features Section styling remains the same */
+
+/* Add new contact section */
+.contact {
+  padding: 4rem 2rem;
+  background: var(--gradient);
+  color: var(--surface);
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-info a {
+  color: var(--surface);
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  margin: 1rem 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-info a:hover {
+  opacity: 0.8;
+}
+
+/* Feature Cards */
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.feature-section:nth-child(2) .section-title {
+  background: rgba(44, 182, 125, 0.05);
+}
+
+.section-title {
+  text-align: center;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  border: 1px solid var(--card-border);
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.section-title .feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  height: 100%;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 0 30px rgba(140, 141, 252, 0.1);
+  background: white;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--gradient);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 4rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 2rem;
+  background: #C2773E; /* Coffee brown from the theme */
+  width: 100%;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(253, 246, 227, 0.2); /* Lighter border for contrast */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-info a {
+  color: #FDF6E3; /* Keep light cream color for text */
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.contact-info a:hover {
+  color: #F4D03F; /* Change hover to secondary/yellow color for better contrast */
+  opacity: 1;
+}
+
+footer p {
+  color: #FDF6E3; /* Keep light cream color for text */
+  font-size: 0.9rem;
+}
+
+footer .social-links {
+  margin: 0;
+}
+
+footer .social-links a {
+  color: #FDF6E3; /* Keep light cream color for text */
+  opacity: 0.7;
+  margin: 0 0.5rem;
+  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
+}
+
+footer .social-links a:hover {
+  opacity: 1;
+  color: #F4D03F; /* Change hover to secondary/yellow color for better contrast */
+}
+
+@media (max-width: 900px) {
+  footer {
+    padding: 1rem; /* Reduced from 2rem */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem; /* Reduced from 1.5rem */
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced from 1rem */
+  }
+
+  .contact-info a {
+    justify-content: center;
+    font-size: 0.8rem; /* Reduced from 0.9rem */
+  }
+
+  footer p {
+    font-size: 0.8rem; /* Reduced from 0.9rem */
+    margin: 0; /* Remove any margin */
+  }
+}
+
+/* Remove the connect section styles */
+.connect-section,
+.contact-links {
+  display: none;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .founder-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* New styles for combined card */
+  .founder-section {
+    background: white;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    padding: 2rem;
+    margin: 0 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .founder {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .founder:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .founder img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .founder-bio {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .founder-bio p {
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  /* Adjust team container padding */
+  .team-container {
+    padding: 0 1rem;
+  }
+}
+
+/* Add subtle animations */
+.feature-card, .founder {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add gradient borders on hover */
+.feature-card:hover, .founder:hover {
+  background: white;
+  border: 1px solid var(--primary);
+}
+
+/* Update navigation styles */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(253, 246, 227, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(194, 119, 62, 0.1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.top-nav.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 3rem;
+  justify-content: flex-start;  /* Align to left like DeepMind */
+  align-items: center;
+}
+
+.nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.nav-item:hover {
+  color: var(--text);
+}
+
+/* DeepMind-style underline indicator */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  transform-origin: left;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(0.3);
+}
+
+.nav-item.active {
+  color: var(--text);
+  background: none;
+  border: none;
+}
+
+.nav-item.active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    padding: 0 1rem;
+    gap: 1.5rem;
+    justify-content: center;  /* Center on mobile */
+  }
+
+  .nav-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* AI Hospitality Section */
+.ai-hospitality {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 227, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hospitality-card {
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid var(--card-border);
+  position: relative;
+}
+
+/* Card Styles */
+.card-image {
+  flex: 1;
+  position: relative;
+  min-height: 400px;
+}
+
+/* Remove the gradient overlay */
+.card-image::after {
+  display: none;  /* This removes all gradient overlays */
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.card-content {
+  flex: 1;
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .hospitality-card {
+    flex-direction: column;
+  }
+
+  .card-image {
+    min-height: 250px;
+  }
+
+  /* Add responsive font size for mobile */
+  .card-content h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Brand Loyalty Section */
+.brand-loyalty {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 227, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Make the card hover effect more engaging */
+.hospitality-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hospitality-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(194, 119, 62, 0.15);
+}
+
+/* Add subtle animation to the gradient overlay */
+.card-image::after {
+  transition: opacity 0.3s ease;
+}
+
+.hospitality-card:hover .card-image::after {
+  opacity: 0.9;
+}
+
+/* Enhance text animation on hover */
+.card-content h2,
+.card-content p {
+  transition: transform 0.3s ease;
+}
+
+.hospitality-card:hover .card-content h2 {
+  transform: translateY(-2px);
+}
+
+.hospitality-card:hover .card-content p {
+  transform: translateY(2px);
+}
+
+/* Happy Customers Section */
+.happy-customers {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 227, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Add alternating layout for visual interest */
+.happy-customers .hospitality-card {
+  flex-direction: row-reverse;
+}
+
+.happy-customers .card-image::after {
+  display: none;
+}
+
+/* Adjust mobile layout */
+@media (max-width: 900px) {
+  .happy-customers .hospitality-card {
+    flex-direction: column;
+  }
+
+  .happy-customers .card-image::after {
+    display: none;
+  }
+}
+
+/* Add fluid background animation */
+body::before {
+  display: none;
+}
+
+/* Add subtle noise texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02; /* Reduce noise texture opacity */
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Add geometric pattern overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Cpath d='M30 0L0 30h60L30 0zm0 60L0 30h60L30 60z'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.2;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Add these styles for the VANTA background */
+#vanta-background {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0.7; /* Add this to make the effect more visible */
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+  /* Hero section adjustments */
+  .hero-content {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;  /* Reduced from 3.5rem */
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;  /* Reduced from 1.4rem */
+    white-space: normal;
+  }
+
+  /* Section padding adjustments */
+  .snap-section {
+    padding: 2rem 1rem;  /* Reduced padding */
+  }
+
+  /* Card adjustments */
+  .hospitality-card {
+    margin: 0 0.5rem;
+  }
+
+  .card-content {
+    padding: 1.5rem;  /* Reduced from 3rem */
+  }
+
+  .card-content h2 {
+    font-size: 1.75rem;  /* Reduced from 2rem */
+    margin-bottom: 1rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .card-image {
+    min-height: 200px;  /* Reduced from 250px */
+  }
+
+  /* Team section adjustments */
+  .team {
+    padding: 1rem 0.5rem;  /* Reduced padding */
+    margin-top: 0;
+    min-height: auto;  /* Allow section to be shorter on mobile */
+  }
+
+  .team-container {
+    padding: 0 0.5rem;  /* Reduced side padding */
+  }
+
+  .team-container h2 {
+    font-size: 1.75rem;  /* Smaller heading */
+    margin-bottom: 1.5rem;  /* Reduced margin */
+  }
+
+  .founder-section {
+    gap: 1.5rem;  /* Reduced gap */
+  }
+
+  .founder {
+    padding: 1rem;  /* Reduced padding */
+    margin: 0 auto;
+    max-width: 280px;  /* Limit width on mobile */
+  }
+
+  .founder img {
+    width: 120px;  /* Smaller image */
+    height: 120px;
+    margin-bottom: 0.75rem;  /* Reduced margin */
+  }
+
+  .founder h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .founder p {
+    margin-bottom: 0.5rem;
+  }
+
+  .founder-bio {
+    font-size: 0.9rem;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  .founder-bio p {
+    margin-bottom: 1rem;  /* Reduced margin between paragraphs */
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+  }
+
+  .contact-info a {
+    font-size: 0.9rem;
+  }
+
+  /* Make navigation more compact */
+  .top-nav {
+    padding: 0.25rem 0;  /* Reduced vertical padding */
+  }
+
+  .nav-content {
+    padding: 0.25rem;  /* Reduced padding */
+    gap: 0.75rem;  /* Reduced gap between items */
+  }
+
+  .nav-item {
+    font-size: 0.8rem;  /* Smaller font */
+    padding: 0.15rem 0;
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 380px) {
+  .team-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .founder {
+    max-width: 100%;  /* Full width on very small screens */
+    padding: 0.75rem;
+  }
+
+  .founder img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .founder h3 {
+    font-size: 1.1rem;
+  }
+
+  .founder-bio {
+    font-size: 0.85rem;
+  }
+
+  /* Even more compact navigation */
+  .nav-content {
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    font-size: 0.75rem;
+    padding: 0.1rem 0;
+  }
+}
+
+/* Update scroll container for mobile */
+@media (max-width: 768px) {
+  .scroll-container {
+    scroll-snap-type: none;  /* Disable snapping on mobile */
+    overflow-y: auto;
+  }
+
+  /* Adjust section heights for mobile */
+  .snap-section {
+    min-height: auto;  /* Allow sections to be shorter on mobile */
+    height: auto;
+    scroll-snap-align: none;  /* Disable snap alignment */
+  }
+
+  /* Ensure the hero section still takes full height */
+  .hero {
+    min-height: 100vh;
+    height: 100vh;
+    scroll-snap-align: none;  /* Disable snap alignment */
+  }
+}
+
+/* Fix navigation on mobile */
+@media (max-width: 768px) {
+  .nav-content {
+    padding: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-item {
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+  }
+
+  .top-nav {
+    padding: 0.5rem 0;
+  }
+}
+
+/* Update feature cards for mobile */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;  /* Single column on mobile */
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .section-title {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+}
