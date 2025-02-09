@@ -870,6 +870,225 @@
       pointer-events: none;
       opacity: 0.7; /* Add this to make the effect more visible */
     }
+
+    /* Update mobile styles */
+    @media (max-width: 768px) {
+      /* Hero section adjustments */
+      .hero-content {
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;  /* Reduced from 3.5rem */
+        line-height: 1.2;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;  /* Reduced from 1.4rem */
+        white-space: normal;
+      }
+
+      /* Section padding adjustments */
+      .snap-section {
+        padding: 2rem 1rem;  /* Reduced padding */
+      }
+
+      /* Card adjustments */
+      .hospitality-card {
+        margin: 0 0.5rem;
+      }
+
+      .card-content {
+        padding: 1.5rem;  /* Reduced from 3rem */
+      }
+
+      .card-content h2 {
+        font-size: 1.75rem;  /* Reduced from 2rem */
+        margin-bottom: 1rem;
+      }
+
+      .card-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .card-image {
+        min-height: 200px;  /* Reduced from 250px */
+      }
+
+      /* Team section adjustments */
+      .team {
+        padding: 1rem 0.5rem;  /* Reduced padding */
+        margin-top: 0;
+        min-height: auto;  /* Allow section to be shorter on mobile */
+      }
+
+      .team-container {
+        padding: 0 0.5rem;  /* Reduced side padding */
+      }
+
+      .team-container h2 {
+        font-size: 1.75rem;  /* Smaller heading */
+        margin-bottom: 1.5rem;  /* Reduced margin */
+      }
+
+      .founder-section {
+        gap: 1.5rem;  /* Reduced gap */
+      }
+
+      .founder {
+        padding: 1rem;  /* Reduced padding */
+        margin: 0 auto;
+        max-width: 280px;  /* Limit width on mobile */
+      }
+
+      .founder img {
+        width: 120px;  /* Smaller image */
+        height: 120px;
+        margin-bottom: 0.75rem;  /* Reduced margin */
+      }
+
+      .founder h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .founder p {
+        margin-bottom: 0.5rem;
+      }
+
+      .founder-bio {
+        font-size: 0.9rem;
+        padding: 0;
+        line-height: 1.5;
+      }
+
+      .founder-bio p {
+        margin-bottom: 1rem;  /* Reduced margin between paragraphs */
+      }
+
+      /* Footer adjustments */
+      footer {
+        padding: 1.5rem 1rem;
+      }
+
+      .footer-content {
+        gap: 1rem;
+      }
+
+      .contact-info a {
+        font-size: 0.9rem;
+      }
+
+      /* Make navigation more compact */
+      .top-nav {
+        padding: 0.25rem 0;  /* Reduced vertical padding */
+      }
+
+      .nav-content {
+        padding: 0.25rem;  /* Reduced padding */
+        gap: 0.75rem;  /* Reduced gap between items */
+      }
+
+      .nav-item {
+        font-size: 0.8rem;  /* Smaller font */
+        padding: 0.15rem 0;
+      }
+    }
+
+    /* Additional adjustments for very small screens */
+    @media (max-width: 380px) {
+      .team-container h2 {
+        font-size: 1.5rem;
+      }
+
+      .founder {
+        max-width: 100%;  /* Full width on very small screens */
+        padding: 0.75rem;
+      }
+
+      .founder img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .founder h3 {
+        font-size: 1.1rem;
+      }
+
+      .founder-bio {
+        font-size: 0.85rem;
+      }
+
+      /* Even more compact navigation */
+      .nav-content {
+        gap: 0.5rem;
+      }
+
+      .nav-item {
+        font-size: 0.75rem;
+        padding: 0.1rem 0;
+      }
+    }
+
+    /* Update scroll container for mobile */
+    @media (max-width: 768px) {
+      .scroll-container {
+        scroll-snap-type: none;  /* Disable snapping on mobile */
+        overflow-y: auto;
+      }
+
+      /* Adjust section heights for mobile */
+      .snap-section {
+        min-height: auto;  /* Allow sections to be shorter on mobile */
+        height: auto;
+        scroll-snap-align: none;  /* Disable snap alignment */
+      }
+
+      /* Ensure the hero section still takes full height */
+      .hero {
+        min-height: 100vh;
+        height: 100vh;
+        scroll-snap-align: none;  /* Disable snap alignment */
+      }
+    }
+
+    /* Fix navigation on mobile */
+    @media (max-width: 768px) {
+      .nav-content {
+        padding: 0.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-item {
+        font-size: 0.85rem;
+        padding: 0.25rem 0;
+      }
+
+      .top-nav {
+        padding: 0.5rem 0;
+      }
+    }
+
+    /* Update feature cards for mobile */
+    @media (max-width: 768px) {
+      .cards-container {
+        grid-template-columns: 1fr;  /* Single column on mobile */
+        gap: 1rem;
+      }
+
+      .feature-card {
+        padding: 1rem;
+      }
+
+      .section-title {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
