@@ -59,10 +59,10 @@ html {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 4rem 2rem;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Increased overlay opacity for better text visibility */
               url('assets/main_theme.jpg');
   background-size: cover;
   background-position: center;
@@ -75,7 +75,7 @@ html {
   margin: 0 auto;
   padding: 0 2rem;
   z-index: 2;
-  text-align: left;
+  text-align: center;
   margin-bottom: 4rem;
   position: relative;
 }
@@ -84,24 +84,25 @@ html {
   font-size: 5rem;
   font-weight: 800;
   letter-spacing: -1px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  text-align: left;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Increased shadow */
+  text-align: center;
 }
 
 .hero-content p {
-  font-size: 1.8rem;
-  white-space: nowrap;  /* Keep text in one line */
-  margin: 0;
+  font-size: 1.5rem;
   color: white;
-  font-style: italic;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;  /* Add ellipsis if text overflows */
+  font-style: normal;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Increased shadow */
+  text-align: center;
+  max-width: 800px;
+  white-space: normal;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* Update scroll indicator for better visibility on image background */
@@ -130,8 +131,7 @@ html {
 /* Adjust hero for mobile */
 @media (max-width: 900px) {
   .hero-content {
-    padding: 0 1.5rem;
-    margin-bottom: 3rem;
+    padding: 0 1rem;
   }
 
   .hero-content h1 {
@@ -139,8 +139,9 @@ html {
   }
 
   .hero-content p {
-    font-size: 1.4rem;
-    white-space: normal;  /* Allow wrapping on very small screens */
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
   }
 
   .hospitality-card {
