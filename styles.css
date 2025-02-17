@@ -1153,3 +1153,278 @@ body::after {
     margin-bottom: 2rem;
   }
 }
+
+/* Common Hurdles Section */
+.common-hurdles {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 227, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hurdles-container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.hurdles-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hurdles-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.hurdle-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hurdle-card:nth-child(1) {
+  background: linear-gradient(135deg, rgb(230, 190, 160), rgb(255, 255, 255));
+}
+
+.hurdle-card:nth-child(2) {
+  background: linear-gradient(135deg, rgb(250, 235, 180), rgb(255, 255, 255));
+}
+
+.hurdle-card:nth-child(3) {
+  background: linear-gradient(135deg, rgb(200, 210, 220), rgb(255, 255, 255));
+}
+
+.hurdle-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.hurdle-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.hurdle-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Mobile responsiveness for hurdles section */
+@media (max-width: 900px) {
+  .hurdles-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hurdles-container {
+    padding: 0 1rem;
+  }
+
+  .hurdles-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .hurdle-card {
+    padding: 1.5rem;
+  }
+
+  .hurdle-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .hurdle-card p {
+    font-size: 0.95rem;
+  }
+
+  .common-hurdles {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Update Solution Section */
+.solution-section {
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(253, 246, 227, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.solution-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.solution-title-card {
+  background: transparent;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  border: none;
+  box-shadow: none;
+}
+
+.solution-title-card h2 {
+  font-size: 3rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.solution-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.solution-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid var(--card-border);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+/* Add numbered circles back */
+.solution-card::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Keep the gradient backgrounds */
+.solution-card:nth-child(1) {
+  background: linear-gradient(135deg, rgb(180, 220, 255), rgb(255, 255, 255));
+}
+
+.solution-card:nth-child(2) {
+  background: linear-gradient(135deg, rgb(255, 200, 180), rgb(255, 255, 255));
+}
+
+.solution-card h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.solution-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.solution-card li {
+  margin-bottom: 1.5rem;
+}
+
+.solution-card li:last-child {
+  margin-bottom: 0;
+}
+
+.solution-card li strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.solution-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.solution-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.solution-card strong:first-of-type {
+  margin-top: 0;
+}
+
+/* Mobile responsiveness for solution section */
+@media (max-width: 900px) {
+  .solution-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .solution-section {
+    padding: 2rem 1rem;
+  }
+
+  .solution-title-card {
+    padding: 1.5rem;
+  }
+
+  .solution-title-card h2 {
+    font-size: 2rem;
+  }
+
+  .solution-card {
+    padding: 1.25rem; /* Reduced padding */
+  }
+
+  .solution-card::before {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    top: -0.75rem;
+    left: -0.75rem;
+  }
+
+  /* Adjust spacing between points for mobile */
+  .solution-card strong {
+    margin-top: 1.5rem; /* Reduced top margin */
+  }
+
+  .solution-card h3 {
+    margin-bottom: 1rem; /* Reduced bottom margin */
+  }
+}
