@@ -299,7 +299,7 @@ main {
     }
 
     .quote-text {
-        font-size: 2rem;
+        font-size: 2rem;  /* Match hero message font size */
     }
 }
 
@@ -330,7 +330,7 @@ main {
     }
 
     .quote-text {
-        font-size: 1.6rem;
+        font-size: 1.8rem;  /* Match hero message font size */
     }
 }
 
@@ -373,9 +373,9 @@ main {
 }
 
 .quote-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
     line-height: 1.4;
     max-width: 1200px;
-    color: #2c3e50;
+    color: black;
 }
