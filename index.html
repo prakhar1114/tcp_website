@@ -6,6 +6,7 @@
     <title>TheCoffeePlaces</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- <script src="three.r134.min.js"></script>
     <script src="vanta.halo.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
@@ -17,7 +18,7 @@
     <section class="first-screen">
         <nav>
             <div class="logo">TheCoffeePlaces</div>
-            <button class="cta-button">Get in Touch</button>
+            <button class="cta-button" onclick="scrollToContact()">Get in Touch</button>
         </nav>
 
         <main>
@@ -63,6 +64,48 @@
         </p>
     </section>
 
+    <section class="tabs-section">
+        <h2 class="section-heading">Reimagined Customer Experience</h2>
+        
+        <div class="tabs-container">
+            <div class="tab">
+                <h3>Simplified Loyalty Programs</h3>
+                <p>Visible to customers on their app</p>
+            </div>
+            <div class="tab">
+                <h3>No Spams</h3>
+                <p>Customers only receive notifications from favourite restaurants</p>
+            </div>
+            <div class="tab">
+                <h3>Access to New Features</h3>
+                <p>In app features to complement dining experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <p class="hero-message">
+            Restaurants can now STAY FULLY CONNECTED with their most valuable customers, addressing ALL THEIR NEEDS and building a mutually beneficial relationship.
+        </p>
+    </section>
+
+    <div class="contact-message">
+        Reach out at thecoffeeplaces@gmail.com for any queries
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <a href="mailto:thecoffeeplaces@gmail.com"><i class="fas fa-envelope"></i> thecoffeeplaces@gmail.com</a>
+                <a href="https://prakhar1114.github.io/prakharjain/" target="_blank"><i class="fas fa-globe"></i> Visit Founder's Portfolio</a>
+            </div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <p>© 2025 TheCoffeePlaces</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script>
         VANTA.CLOUDS({
@@ -85,6 +128,12 @@
                 scrollIndicator.style.pointerEvents = 'auto';
             }
         });
+
+        // Add scroll to contact function
+        function scrollToContact() {
+            const footer = document.querySelector('footer');
+            footer.scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html> 
