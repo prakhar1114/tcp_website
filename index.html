@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nrtrr</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_v3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- <script src="three.r134.min.js"></script>
@@ -13,99 +13,162 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
 </head>
 <body>
-    <div id="background"></div>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="scrollToTop()">nrtrr</a>
+            <div class="nav-links">
+                <a href="#problems">Problems</a>
+                <a href="#solution">Our Solution</a>
+                <a href="#customer-experience">New Customer Value</a>
+            </div>
+            <button class="cta-button" onclick="scrollToContact()">Get In Touch</button>
+            <button class="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
     
-    <section class="first-screen">
-        <nav>
-            <div class="logo">nrtrr</div>
-            <button class="cta-button" onclick="scrollToContact()">Get in Touch</button>
-        </nav>
-
-        <main>
-            <div class="hero-message">
-                We help restaurants BRING BACK their customers by creating a seamless online-offline dining experience
-            </div>
-        </main>
-
-        <div class="scroll-indicator">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#problems">Problems</a>
+            <a href="#solution">Our Solution</a>
+            <a href="#customer-experience">New Customer Value</a>
+            <button class="mobile-cta-button" onclick="scrollToContact()">Get In Touch</button>
         </div>
-    </section>
+    </div>
 
-    <section class="features">
-        <div class="features-text">
-            <h2 class="features-heading">
-                We remind, incentivise and interest your customers so that they WANT to comeback.
-            </h2>
-            <p class="features-subheading">We do this using</p>
+    <main>
+        <div class="hero-message">
+            We help restaurants <span class="highlight-1">ENHANCE</span> their customer engagement and revenue through <span class="highlight-2">DIGITALISATION</span> and <span class="highlight-3">GAMIFICATION</span>
         </div>
+    </main>
+
+    <section id="problems">
+        <h2 class="section-heading">Helping Restaurant with these challenges</h2>
         
-        <div class="cards-container">
-            <div class="card">
-                <h3>Digital Marketing</h3>
-                <p>Through a dedicated app on customer's phones</p>
-            </div>
-            <div class="card">
-                <h3>Loyalty Incentives</h3>
-                <p>Starbucks like loyalty rewards with promotions and build a community</p>
-            </div>
-            <div class="card">
-                <h3>Seamless Dining Experience</h3>
-                <p>Services like reservations, online ordering, messaging and more</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="quote-section">
-        <div class="quote-image-container">
-            <div class="quote-content">
-                <div class="hero-message">
-                    nrtrr helps customers rediscover their favourite restaurants in their online journey 
-                    <!-- which seamlessly transitions into an amazing dining experience. -->
+        <div class="problems-container">
+            <div class="problem-card">
+                <div class="image-container">
+                    <img src="assets/challenges/high_margins.webp" alt="High Delivery Margins">
+                </div>
+                <div class="card-caption">
+                    <h3>Excessive Platform Fees</h3>
+                    <p>Exorbitant fees charged by aggregator platforms significantly erode profits</p>
                 </div>
             </div>
-            <div class="image-content">
-                <img src="assets/espresso_digital_marketing.png" alt="Digital Marketing Illustration" class="quote-image">
+            
+            <div class="problem-card">
+                <div class="image-container">
+                    <img src="assets/challenges/confusing_loyalty.png" alt="Ineffective Loyalty">
+                </div>
+                <div class="card-caption">
+                    <h3>Ineffective Reward Programs</h3>
+                    <p>Rewards programs are not effective to engage customers and bring them back</p>
+                </div>
+            </div>
+            
+            <div class="problem-card">
+                <div class="image-container">
+                    <img src="assets/challenges/low_reach.png" alt="Limited Audience">
+                </div>
+                <div class="card-caption">
+                    <h3>Limited Social Media Reach</h3>
+                    <p>Limited reach on social platforms restrict restaurant discovery and revenue growth</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="tabs-section">
-        <h2 class="section-heading">Reimagined Customer Experience</h2>
+    <div class="hero-message">
+        We remind, incentivise and interest your customers so that they <span class="highlight-1">WANT</span> to comeback.
+    </div>
+
+    <section id="solution">
+        <h2 class="section-heading">Our Solution</h2>
         
-        <div class="tabs-container">
-            <div class="tab">
+        <div class="solutions-container">
+            <div class="solution-card">
+                <div class="image-container">
+                    <img src="assets/solutions/digital_marketing.png" alt="Digital Marketing">
+                </div>
+                <div class="card-caption">
+                    <h3>Digital Marketing</h3>
+                    <p>Through a dedicated app on customer's phones</p>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="image-container">
+                    <img src="assets/solutions/gamified_loyalty.png" alt="Gamified Loyalty">
+                </div>
+                <div class="card-caption">
+                    <h3>Gamified Loyalty Program</h3>
+                    <p>Incentivising customers with points through engaging missions</p>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="image-container">
+                    <img src="assets/solutions/one_app.png" alt="The One App">
+                </div>
+                <div class="card-caption">
+                    <h3>The One App</h3>
+                    <p>For all customer needs offering ordering, delivery, reward points redemption etc</p>
+                </div>
+            </div>
+            
+            <div class="solution-card">
+                <div class="image-container">
+                    <img src="assets/solutions/community.png" alt="Community">
+                </div>
+                <div class="card-caption">
+                    <h3>Build a Superfans Community</h3>
+                    <p>Restaurant community with active member engagement within the app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="quote-section">
+        <div class="hero-message">
+            nrtrr helps customers rediscover their favourite restaurants in their online journey
+        </div>
+        <!-- <img src="assets/espresso_digital_marketing.png" alt="Digital Marketing Illustration" style="max-width: 400px;"> -->
+    </div>
+
+    <section id="customer-experience">
+        <h2 class="section-heading">Unlock New Customer Value</h2>
+        
+        <div class="value-cards">
+            <div class="value-card">
                 <h3>Simplified Loyalty Programs</h3>
                 <p>Rewards and redemptions available on the app</p>
             </div>
-            <div class="tab">
+            
+            <div class="value-card">
                 <h3>Community Engagement</h3>
                 <p>Become a part of an active community of food lovers with access to exclusive rewards</p>
             </div>
-            <div class="tab">
+            
+            <div class="value-card">
                 <h3>The One-Stop App</h3>
                 <p>A single app for a customer's favourite restaurants and needs</p>
             </div>
-            <!-- <div class="tab">
-                <h3>Access to New Dining Features</h3>
-                <p>In app features to complement dining experience</p>
-            </div> -->
-            <div class="tab">
-                <h3>Pay with points</h3>
+            
+            <div class="value-card">
+                <h3>Pay with Points</h3>
                 <p>Customers can earn and redeem points across their favourite restaurants</p>
             </div>
         </div>
     </section>
 
-    <section class="quote-section">
-        <p class="hero-message">
-            Restaurants can now STAY FULLY CONNECTED with their most valuable customers, addressing ALL THEIR NEEDS and building a mutually beneficial relationship.
-        </p>
-    </section>
+    <div class="hero-message">
+        Restaurants can now <span class="highlight-2">STAY FULLY CONNECTED</span> with their most valuable customers, addressing <span class="highlight-3">ALL THEIR NEEDS</span> and building a mutually beneficial relationship.
+    </div>
 
-    <div class="contact-message">
+    <div class="contact-message" id="contact-message">
         Reach out at nrtrrapp@gmail.com for any queries
     </div>
 
@@ -117,39 +180,55 @@
             </div>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
+                <a href="index_v1.html">Legacy Website</a>
                 <p>© 2025 nrtrr</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        VANTA.CLOUDS({
-            el: "#background",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00
-        })
+        function scrollToContact() {
+            document.getElementById('contact-message').scrollIntoView({ behavior: 'smooth' });
+            closeMobileMenu();
+        }
 
-        // Add scroll indicator logic
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                scrollIndicator.style.opacity = '0';
-                scrollIndicator.style.pointerEvents = 'none';
-            } else {
-                scrollIndicator.style.opacity = '1';
-                scrollIndicator.style.pointerEvents = 'auto';
-            }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            closeMobileMenu();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                closeMobileMenu();
+            });
         });
 
-        // Add scroll to contact function
-        function scrollToContact() {
-            const footer = document.querySelector('footer');
-            footer.scrollIntoView({ behavior: 'smooth' });
+        // Mobile menu functionality
+        const hamburgerButton = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            hamburgerButton.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
         }
+
+        function closeMobileMenu() {
+            hamburgerButton.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+
+        hamburgerButton.addEventListener('click', toggleMobileMenu);
     </script>
 </body>
 </html> 
