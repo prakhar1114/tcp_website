@@ -144,7 +144,8 @@ main {
     color: black;
     margin: 2rem auto;
     text-align: center;
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
+    padding: 2rem 0rem;
 }
 
 /* Add styles for highlighted words */
@@ -504,7 +505,7 @@ body.menu-open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
 }
 
 .section-heading {
@@ -515,7 +516,7 @@ body.menu-open {
     letter-spacing: 0.5px;
     color: #2c3e50;
     font-family: 'Poppins', sans-serif;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 .problems-container {
