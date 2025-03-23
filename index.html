@@ -31,9 +31,12 @@
     
     <div class="mobile-menu">
         <div class="mobile-menu-content">
+            <a href="#" class="mobile-logo" onclick="scrollToTop()">aglio</a>
             <a href="#solution">Key Features</a>
             <a href="#contact">Contact</a>
-            <a href="#contact" class="mobile-cta-button">Get Started</a>
+            <div class="mobile-cta-wrapper">
+                <a href="#contact" class="mobile-cta-button">Get Started</a>
+            </div>
         </div>
     </div>
 
@@ -110,22 +113,29 @@
         <div class="contact-form-container">
             <form class="contact-form" action="https://formsubmit.co/prakhar@aglioapp.com" method="POST">
                 <div class="form-group">
-                    <input type="text" name="business" placeholder="Restaurant Name" required>
+                    <input type="text" name="business" placeholder="Restaurant Name" required
+                           autocomplete="organization">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="contact_person" placeholder="Contact Person" required>
+                    <input type="text" name="contact_person" placeholder="Contact Person" required
+                           autocomplete="name">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Business Email" required>
+                    <input type="email" name="email" placeholder="Business Email" required
+                           autocomplete="email"
+                           inputmode="email">
                 </div>
                 <div class="form-group">
                     <input type="tel" name="phone" placeholder="Phone (e.g., +91XXXXXXXXXX)" 
                            pattern="^\+[1-9]\d{1,14}$" 
                            title="Please enter phone number with country code (e.g., +91XXXXXXXXXX)"
-                           required>
+                           required
+                           autocomplete="tel"
+                           inputmode="tel">
                 </div>
                 <div class="form-group full-width">
-                    <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"></textarea>
+                    <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"
+                              inputmode="text"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Request a Demo <i class="fas fa-arrow-right"></i></button>
             </form>
