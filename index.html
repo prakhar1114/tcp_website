@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraveClub</title>
+    <title>aglio</title>
     <link rel="stylesheet" href="styles_v3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -15,9 +15,9 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">CraveClub</a>
+            <a href="#" class="logo" onclick="scrollToTop()">aglio</a>
             <div class="nav-links">
-                <a href="#solution">Solution</a>
+                <a href="#solution">Key Features</a>
                 <a href="#contact">Contact</a>
             </div>
             <a href="#contact" class="cta-button">Get Started</a>
@@ -31,7 +31,7 @@
     
     <div class="mobile-menu">
         <div class="mobile-menu-content">
-            <a href="#solution">Solution</a>
+            <a href="#solution">Key Features</a>
             <a href="#contact">Contact</a>
             <a href="#contact" class="mobile-cta-button">Get Started</a>
         </div>
@@ -40,8 +40,8 @@
     <header id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Boost Restaurant Revenue with Smart Loyalty</h1>
-                <p>Build customer relationships, drive repeat business, and gain valuable insights with a branded loyalty program that customers love to use</p>
+                <h1>Boost Restaurant Revenue with Engaging Loyalty</h1>
+                <p>Build customer relationships, drive repeat business, and grow your social media presence with a gamified loyalty program that customers love to use</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="primary-button">Get Started</a>
                     <a href="#solution" class="secondary-button">Learn More</a>
@@ -51,7 +51,7 @@
     </header>
 
     <section id="solution">
-        <h2 class="section-heading">CraveClub Solution</h2>
+        <h2 class="section-heading">Key Features</h2>
         
         <div class="quote-section side-by-side">
             <div class="image-text-container">
@@ -65,13 +65,22 @@
         <div class="quote-section side-by-side">
             <div class="image-text-container">
                 <div class="hero-message">
-                    CraveClub helps restaurants <span class="highlight-1">build direct relationships</span> with their customers
+                    <span class="highlight-1">Instantly notify your customers</span> about promotions and build direct relationships
                 </div>
-                <img src="assets/espresso_digital_marketing.png" alt="Customer Messaging Interface">
+                <img src="assets/notifications_v2.png" alt="Customer Messaging Interface">
+            </div>
+        </div>
+
+        <div class="quote-section side-by-side">
+            <div class="image-text-container">
+                <div class="hero-message">
+                    <span class="highlight-1">The One App</span> for all your restaurant needs
+                </div>
+                <img src="assets/solutions/one_app.png" alt="Customer Messaging Interface">
             </div>
         </div>
         
-        <div class="solution-cards">
+        <!-- <div class="solution-cards">
             <div class="solution-card">
                 <h3>Direct Customer Connection</h3>
                 <p>Build your branded digital presence with a platform that eliminates third-party dependency and fees while keeping you in control of the customer relationship.</p>
@@ -85,13 +94,13 @@
             <div class="solution-card">
                 <h3>All-in-One Experience</h3>
                 <p>One app for ordering, reservations, loyalty and rewards at multiple participating restaurants.</p>
-            </div>
+            </div> -->
         </div>
     </section>
 
     <div class="quote-section final-cta">
         <div class="hero-message">
-            Ready to <span class="highlight-1">boost revenue</span> and build <span class="highlight-1">customer loyalty</span>? Get started today.
+            Ready to build <span class="highlight-1">customer loyalty</span> and <span class="highlight-1">boost revenue</span>? Get started today.
         </div>
     </div>
 
@@ -99,17 +108,23 @@
         <h2 class="section-heading">Contact Us</h2>
         
         <div class="contact-form-container">
-            <form class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/prakhar@aglioapp.com" method="POST">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="business" placeholder="Restaurant Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="contact_person" placeholder="Contact Person" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="business" placeholder="Restaurant Name">
+                    <input type="email" name="email" placeholder="Business Email" required>
                 </div>
                 <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone (e.g., +91XXXXXXXXXX)" 
+                           pattern="^\+[1-9]\d{1,14}$" 
+                           title="Please enter phone number with country code (e.g., +91XXXXXXXXXX)"
+                           required>
+                </div>
+                <div class="form-group full-width">
                     <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Request a Demo <i class="fas fa-arrow-right"></i></button>
@@ -120,17 +135,16 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <a href="#" class="logo">CraveClub</a>
-                <p>Smart restaurant loyalty for increased revenue</p>
+                <a href="#" class="logo">aglio</a>
+                <!-- <p>Building restaurant loyalty in competitive landscape</p> -->
+                <a href="mailto:prakhar@aglioapp.com" class="founder-link"><i class="fas fa-envelope"></i> prakhar@aglioapp.com</a>
                 <a href="https://prakhar1114.github.io/prakharjain/" target="_blank" class="founder-link">Visit Founder's Portfolio</a>
             </div>
             <div class="footer-links">
-                <a href="#solution">Solution</a>
-                <a href="#contact">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="index_v1.html">Legacy Website</a>
+                <p>© 2025 aglio</p>
             </div>
-        </div>
-        <div class="copyright">
-            &copy; 2023 CraveClub. All rights reserved.
         </div>
     </footer>
 
