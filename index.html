@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraveClub</title>
+    <title>aglio</title>
     <link rel="stylesheet" href="styles_v3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -13,21 +13,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">CraveClub</a>
-            <div class="nav-links">
-                <a href="#solution">Solution</a>
-                <a href="#contact">Contact</a>
+    <header id="hero">
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo">aglio</a>
+                <div class="nav-links">
+                    <a href="#solution">Solution</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <a href="#contact" class="cta-button">Get Started</a>
+                <button class="hamburger-menu" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <a href="#contact" class="cta-button">Get Started</a>
-            <button class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        </nav>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1>Boost restaurant revenue with smart loyalty</h1>
+                <p>Build customer relationships, drive repeat business, and gain valuable insights with a branded loyalty program that customers love to use</p>
+            </div>
         </div>
-    </nav>
+    </header>
     
     <div class="mobile-menu">
         <div class="mobile-menu-content">
@@ -37,54 +46,39 @@
         </div>
     </div>
 
-    <header id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Boost Restaurant Revenue with Smart Loyalty</h1>
-                <p>Build customer relationships, drive repeat business, and gain valuable insights with a branded loyalty program that customers love to use</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="primary-button">Get Started</a>
-                    <a href="#solution" class="secondary-button">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <section id="solution">
-        <h2 class="section-heading">CraveClub Solution</h2>
-        
-        <div class="quote-section side-by-side">
-            <div class="image-text-container">
-                <div class="hero-message">
-                    Drive engagement with a <span class="highlight-1">gamified loyalty program</span> customers love to use
-                </div>
-                <img src="assets/solutions/gamified_loyalty.png" alt="Gamified Loyalty Program">
+        <div class="quote-section with-image">
+            <div class="hero-message">
+                Drive engagement with a <span class="highlight-1">gamified loyalty program</span> customers love to use
+            </div>
+            <div class="image-wrapper">
+                <img src="assets/solutions/gamified_loyalty.png" alt="Gamified Loyalty Program" loading="lazy" width="480" height="360">
             </div>
         </div>
         
-        <div class="quote-section side-by-side">
-            <div class="image-text-container">
-                <div class="hero-message">
-                    CraveClub helps restaurants <span class="highlight-1">build direct relationships</span> with their customers
-                </div>
-                <img src="assets/espresso_digital_marketing.png" alt="Customer Messaging Interface">
+        <div class="quote-section with-image">
+            <div class="hero-message">
+                aglio helps restaurants <span class="highlight-1">build direct relationships</span> with their customers
+            </div>
+            <div class="image-wrapper">
+                <img src="assets/espresso_digital_marketing.png" alt="Customer Messaging Interface" loading="lazy" width="480" height="360">
             </div>
         </div>
         
         <div class="solution-cards">
             <div class="solution-card">
                 <h3>Direct Customer Connection</h3>
-                <p>Build your branded digital presence with a platform that eliminates third-party dependency and fees while keeping you in control of the customer relationship.</p>
+                <p>Build branded digital presence without third-party fees while keeping control of customer relationships.</p>
             </div>
             
             <div class="solution-card">
                 <h3>Gamified Loyalty Program</h3>
-                <p>Engage customers with a fully customizable rewards system featuring points, challenges, and achievements that drives repeat business and increases customer lifetime value.</p>
+                <p>Drive repeat business with customizable points, challenges, and rewards that increase customer lifetime value.</p>
             </div>
             
             <div class="solution-card">
                 <h3>All-in-One Experience</h3>
-                <p>One app for ordering, reservations, loyalty and rewards at multiple participating restaurants.</p>
+                <p>One app for ordering, reservations, loyalty and rewards at participating restaurants.</p>
             </div>
         </div>
     </section>
@@ -101,16 +95,16 @@
         <div class="contact-form-container">
             <form class="contact-form">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" aria-label="Your Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="Your Email" aria-label="Your Email" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="business" placeholder="Restaurant Name">
+                    <input type="text" name="business" placeholder="Restaurant Name" aria-label="Restaurant Name">
                 </div>
                 <div class="form-group">
-                    <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"></textarea>
+                    <textarea name="message" rows="3" placeholder="Tell us about your needs" aria-label="Message"></textarea>
                 </div>
                 <button type="submit" class="submit-button">Request a Demo <i class="fas fa-arrow-right"></i></button>
             </form>
@@ -120,7 +114,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <a href="#" class="logo">CraveClub</a>
+                <a href="#" class="logo">aglio</a>
                 <p>Smart restaurant loyalty for increased revenue</p>
                 <a href="https://prakhar1114.github.io/prakharjain/" target="_blank" class="founder-link">Visit Founder's Portfolio</a>
             </div>
@@ -130,7 +124,7 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2023 CraveClub. All rights reserved.
+            &copy; 2023 aglio. All rights reserved.
         </div>
     </footer>
 
@@ -150,6 +144,7 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         const body = document.body;
         const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        const nav = document.querySelector('nav');
 
         function toggleMobileMenu() {
             hamburgerButton.classList.toggle('active');
@@ -170,7 +165,34 @@
 
         hamburgerButton.addEventListener('click', toggleMobileMenu);
 
-        // Smooth scrolling for all links
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnHamburger = hamburgerButton.contains(event.target);
+            
+            if (mobileMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
+                closeMobileMenu();
+            }
+        });
+
+        // Hide navbar on scroll down, show on scroll up
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                // Scroll down
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Scroll up
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Smooth scrolling for all links with hash
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -179,12 +201,197 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    targetElement.scrollIntoView({
+                    // Calculate offset for fixed header
+                    const navHeight = nav.offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
             });
         });
+
+        // Improve mobile form experience
+        const formInputs = document.querySelectorAll('input, textarea');
+        
+        formInputs.forEach(input => {
+            // Add active class to parent when input is focused
+            input.addEventListener('focus', function() {
+                this.parentNode.classList.add('active');
+            });
+            
+            // Remove active class when input loses focus if empty
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentNode.classList.remove('active');
+                }
+            });
+        });
+
+        // Fix potential 100vh issues on mobile browsers
+        function setMobileHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // Set initially and on resize
+        setMobileHeight();
+        window.addEventListener('resize', setMobileHeight);
+
+        // Handle submission of the contact form
+        const contactForm = document.querySelector('.contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Add form submission code here
+                // This is a placeholder for form handling
+                
+                // Show a success message (you can style this in your CSS)
+                const formContainer = document.querySelector('.contact-form-container');
+                formContainer.innerHTML = `
+                    <div class="success-message">
+                        <h3>Thank you for reaching out!</h3>
+                        <p>We've received your message and will get back to you shortly.</p>
+                    </div>
+                `;
+            });
+        }
+
+        // Enhanced image loading for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            // Function to handle image loading
+            function handleImageLoad(img) {
+                img.classList.add('loaded');
+                // Remove background from parent wrapper after image loads
+                if (img.parentElement && img.parentElement.classList.contains('image-wrapper')) {
+                    img.parentElement.style.backgroundColor = 'transparent';
+                    img.parentElement.style.minHeight = 'auto';
+                }
+            }
+            
+            // Check for IntersectionObserver support (modern browsers)
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.complete) {
+                                handleImageLoad(img);
+                            } else {
+                                img.addEventListener('load', function() {
+                                    handleImageLoad(img);
+                                });
+                            }
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px 0px',
+                    threshold: 0.01
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback for older browsers
+                lazyImages.forEach(img => {
+                    if (img.complete) {
+                        handleImageLoad(img);
+                    } else {
+                        img.addEventListener('load', function() {
+                            handleImageLoad(img);
+                        });
+                    }
+                });
+            }
+        });
+
+        // Ensure images resize properly on orientation change
+        window.addEventListener('resize', function() {
+            // Update vh variable for mobile menu
+            setMobileHeight();
+            
+            // Force redraw of images if needed
+            const sideByImages = document.querySelectorAll('.side-by-side img');
+            sideByImages.forEach(img => {
+                // Trigger reflow
+                img.style.display = 'none';
+                img.offsetHeight; // Force reflow
+                img.style.display = '';
+            });
+        });
+
+        // Scroll reveal functionality
+        function revealSections() {
+            const sections = document.querySelectorAll('.reveal-section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                // Adjust reveal point based on screen size
+                const revealPoint = window.innerWidth < 768 ? 100 : 150;
+                
+                if (sectionTop < windowHeight - revealPoint) {
+                    section.classList.add('active');
+                } else {
+                    // Hide sections that are scrolled out of view
+                    // Uncomment this if you want sections to hide again when scrolled out
+                    // section.classList.remove('active');
+                }
+            });
+        }
+        
+        // Set up the reveal sections - Run this immediately to hide sections before DOM fully loads
+        function setupRevealSections() {
+            // Add reveal-section class to all elements that should animate
+            const elementsToReveal = document.querySelectorAll('#solution, .final-cta, #contact');
+            
+            elementsToReveal.forEach(element => {
+                // Make sure the section is initially hidden
+                element.classList.add('reveal-section');
+            });
+            
+            // Make subelements of sections reveal when parent is visible
+            const subElements = document.querySelectorAll('#solution .section-heading, #solution .quote-section, #solution .solution-cards, #contact .section-heading, #contact .contact-form-container');
+            subElements.forEach(element => {
+                element.classList.add('reveal-sub-element');
+            });
+        }
+        
+        // Run setup before page loads to prevent flash of content
+        setupRevealSections();
+        
+        // Check visibility once page is loaded and monitor scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force check on page load with a slight delay to ensure proper rendering
+            setTimeout(revealSections, 100);
+            
+            // Force check again after all images load
+            window.addEventListener('load', function() {
+                revealSections();
+            });
+        });
+        
+        // Use a throttled scroll event for better performance
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    revealSections();
+                    scrollTimeout = null;
+                }, 20);
+            }
+        });
+        
+        // Also check on resize
+        window.addEventListener('resize', revealSections);
     </script>
 </body>
 </html> 
