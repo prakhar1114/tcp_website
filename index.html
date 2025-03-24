@@ -18,9 +18,10 @@
             <a href="#" class="logo" onclick="scrollToTop()">aglio</a>
             <div class="nav-links">
                 <a href="#solution">Key Features</a>
+                <a href="#demo">Request A Demo</a>
                 <a href="#contact">Contact</a>
             </div>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <a href="#demo" class="cta-button">Get Started</a>
             <button class="hamburger-menu">
                 <span></span>
                 <span></span>
@@ -33,9 +34,10 @@
         <div class="mobile-menu-content">
             <a href="#" class="mobile-logo" onclick="scrollToTop()">aglio</a>
             <a href="#solution">Key Features</a>
+            <a href="#demo">Request A Demo</a>
             <a href="#contact">Contact</a>
             <div class="mobile-cta-wrapper">
-                <a href="#contact" class="mobile-cta-button">Get Started</a>
+                <a href="#demo" class="mobile-cta-button">Get Started</a>
             </div>
         </div>
     </div>
@@ -46,7 +48,7 @@
                 <h1>Boost Restaurant Revenue with Engaging Loyalty</h1>
                 <p>Build customer relationships, drive repeat business, and grow your social media presence with a gamified loyalty program that customers love to use</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="primary-button">Get Started</a>
+                    <a href="#demo" class="primary-button">Get Started</a>
                     <a href="#solution" class="secondary-button">Learn More</a>
                 </div>
             </div>
@@ -82,7 +84,7 @@
             </div>
         </div>
 
-        <div class="feature-section">
+        <!-- <div class="feature-section">
             <div class="feature-container">
                 <div class="feature-image">
                     <img src="assets/solutions/one_app.png" alt="Customer Messaging Interface">
@@ -91,7 +93,7 @@
                     <span class="highlight-1">The One App</span> for all your restaurant needs
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <!-- <div class="solution-cards">
             <div class="solution-card">
@@ -111,6 +113,30 @@
         </div>
     </section>
 
+    <section id="demo">
+        <div class="feature-container demo-layout">
+            <div class="feature-image">
+                <img src="assets/solutions/one_app.png" alt="Customer Messaging Interface">
+            </div>
+            <div class="feature-content">
+                <div class="feature-text">
+                    <span class="highlight-1">The One App</span> for all your restaurant needs
+                </div>
+                <form class="demo-form" action="https://formsubmit.co/prakhar@aglioapp.com" method="POST">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your Name" required autocomplete="name">
+                        <input type="text" name="restaurant" placeholder="Restaurant Name" required autocomplete="organization">
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="email" placeholder="Email" required autocomplete="email">
+                        <input type="tel" name="phone" placeholder="Phone (e.g., +91XXXXXXXXXX)" required autocomplete="tel">
+                    </div>
+                    <button type="submit" class="submit-button">Request Demo<i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <div class="quote-section final-cta">
         <div class="hero-message">
             Ready to build <span class="highlight-1">customer loyalty</span> and <span class="highlight-1">boost revenue</span>? Get started today.
@@ -127,17 +153,16 @@
                            autocomplete="organization">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="contact_person" placeholder="Contact Person" required
+                    <input type="text" name="contact_person" placeholder="Contact Person Name" required
                            autocomplete="name">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Business Email" required
+                    <input type="email" name="email" placeholder="Email" required
                            autocomplete="email"
                            inputmode="email">
                 </div>
                 <div class="form-group">
                     <input type="tel" name="phone" placeholder="Phone (e.g., +91XXXXXXXXXX)" 
-                           pattern="^\+[1-9]\d{1,14}$" 
                            title="Please enter phone number with country code (e.g., +91XXXXXXXXXX)"
                            required
                            autocomplete="tel"
@@ -147,7 +172,7 @@
                     <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"
                               inputmode="text"></textarea>
                 </div>
-                <button type="submit" class="submit-button">Request a Demo <i class="fas fa-arrow-right"></i></button>
+                <button type="submit" class="submit-button">Submit<i class="fas fa-arrow-right"></i></button>
             </form>
         </div>
     </section>
@@ -203,6 +228,15 @@
         }
 
         hamburgerButton.addEventListener('click', toggleMobileMenu);
+
+        // Demo form toggle functionality
+        const requestDemoBtn = document.getElementById('requestDemoBtn');
+        const demoForm = document.getElementById('demoForm');
+
+        requestDemoBtn.addEventListener('click', () => {
+            demoForm.style.display = demoForm.style.display === 'none' ? 'block' : 'none';
+            requestDemoBtn.textContent = demoForm.style.display === 'none' ? 'Request a Demo' : 'Hide Form';
+        });
 
         // Smooth scrolling for all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
