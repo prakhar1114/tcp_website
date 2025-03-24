@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CraveClub</title>
+    <title>aglio</title>
     <link rel="stylesheet" href="styles_v3.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -15,14 +15,13 @@
 <body>
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo" onclick="scrollToTop()">CraveClub</a>
+            <a href="#" class="logo" onclick="scrollToTop()">aglio</a>
             <div class="nav-links">
-                <a href="#problems">Problems</a>
-                <a href="#solution">Our Solution</a>
-                <a href="#customer-experience">New Customer Value</a>
+                <a href="#solution">Key Features</a>
+                <a href="#contact">Contact</a>
             </div>
-            <button class="cta-button" onclick="scrollToContact()">Get In Touch</button>
-            <button class="hamburger-menu" aria-label="Menu">
+            <a href="#contact" class="cta-button">Get Started</a>
+            <button class="hamburger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -32,181 +31,139 @@
     
     <div class="mobile-menu">
         <div class="mobile-menu-content">
-            <a href="#problems">Problems</a>
-            <a href="#solution">Our Solution</a>
-            <a href="#customer-experience">New Customer Value</a>
-            <button class="mobile-cta-button" onclick="scrollToContact()">Get In Touch</button>
+            <a href="#" class="mobile-logo" onclick="scrollToTop()">aglio</a>
+            <a href="#solution">Key Features</a>
+            <a href="#contact">Contact</a>
+            <div class="mobile-cta-wrapper">
+                <a href="#contact" class="mobile-cta-button">Get Started</a>
+            </div>
         </div>
     </div>
 
-    <main>
-        <div class="hero-message">
-            We help restaurants <span class="highlight-1">ENHANCE</span> their customer engagement and revenue through <span class="highlight-2">DIGITALISATION</span> and <span class="highlight-3">GAMIFICATION</span>
-        </div>
-    </main>
-
-    <section id="problems">
-        <h2 class="section-heading">Helping Restaurant with these challenges</h2>
-        
-        <div class="problems-container">
-            <div class="problem-card">
-                <div class="image-container">
-                    <img src="assets/challenges/high_margins.webp" alt="High Delivery Margins">
-                </div>
-                <div class="card-caption">
-                    <h3>Excessive Platform Fees</h3>
-                    <p>Exorbitant fees charged by aggregator platforms significantly erode profits</p>
-                </div>
-            </div>
-            
-            <div class="problem-card">
-                <div class="image-container">
-                    <img src="assets/challenges/confusing_loyalty.png" alt="Ineffective Loyalty">
-                </div>
-                <div class="card-caption">
-                    <h3>Ineffective Reward Programs</h3>
-                    <p>Rewards programs are not effective to engage customers and bring them back</p>
-                </div>
-            </div>
-            
-            <div class="problem-card">
-                <div class="image-container">
-                    <img src="assets/challenges/low_reach.png" alt="Limited Audience">
-                </div>
-                <div class="card-caption">
-                    <h3>Limited Social Media Reach</h3>
-                    <p>Limited reach on social platforms restrict restaurant discovery and revenue growth</p>
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Boost Restaurant Revenue with Engaging Loyalty</h1>
+                <p>Build customer relationships, drive repeat business, and grow your social media presence with a gamified loyalty program that customers love to use</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="primary-button">Get Started</a>
+                    <a href="#solution" class="secondary-button">Learn More</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="hero-message">
-        One comprehensive <span class="highlight-1">MOBILE APP</span> connects restaurants and their customers, tackling all these challenges effortlessly.
-    </div>
+    </header>
 
     <section id="solution">
-        <h2 class="section-heading">Our Solution</h2>
+        <h2 class="section-heading">Key Features</h2>
         
-        <div class="solutions-container">
-            <div class="solution-card">
-                <div class="image-container">
-                    <img src="assets/solutions/digital_marketing.png" alt="Digital Marketing">
+        <div class="feature-section">
+            <div class="feature-container">
+                <div class="feature-image">
+                    <picture>
+                        <source media="(max-width: 768px)" 
+                               srcset="/Users/prakharjain/code/tcp_website/assets/solutions/gamified_loyalty_mobile.png">
+                        <img src="assets/solutions/gamified_loyalty.png" alt="Gamified Loyalty Program">
+                    </picture>
                 </div>
-                <div class="card-caption">
-                    <h3>Digital Marketing</h3>
-                    <p>Through a dedicated app on customer's phones</p>
-                </div>
-            </div>
-            
-            <div class="solution-card">
-                <div class="image-container">
-                    <img src="assets/solutions/gamified_loyalty.png" alt="Gamified Loyalty">
-                </div>
-                <div class="card-caption">
-                    <h3>Gamified Loyalty Program</h3>
-                    <p>Incentivising customers with points through engaging missions</p>
-                </div>
-            </div>
-            
-            <div class="solution-card">
-                <div class="image-container">
-                    <img src="assets/solutions/one_app.png" alt="The One App">
-                </div>
-                <div class="card-caption">
-                    <h3>The One App</h3>
-                    <p>For all customer needs offering ordering, delivery, reward points redemption etc</p>
-                </div>
-            </div>
-            
-            <div class="solution-card">
-                <div class="image-container">
-                    <img src="assets/solutions/community.png" alt="Community">
-                </div>
-                <div class="card-caption">
-                    <h3>Build a Superfans Community</h3>
-                    <p>Restaurant community with active member engagement within the app</p>
+                <div class="feature-text">
+                    Drive engagement with a <span class="highlight-1">gamified loyalty program</span> customers love to use
                 </div>
             </div>
         </div>
+        
+        <div class="feature-section">
+            <div class="feature-container">
+                <div class="feature-image">
+                    <img src="assets/notifications_v2.png" alt="Customer Messaging Interface">
+                </div>
+                <div class="feature-text">
+                    <span class="highlight-1">Instantly notify your customers</span> about promotions and build direct relationships
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-section">
+            <div class="feature-container">
+                <div class="feature-image">
+                    <img src="assets/solutions/one_app.png" alt="Customer Messaging Interface">
+                </div>
+                <div class="feature-text">
+                    <span class="highlight-1">The One App</span> for all your restaurant needs
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="solution-cards">
+            <div class="solution-card">
+                <h3>Direct Customer Connection</h3>
+                <p>Build your branded digital presence with a platform that eliminates third-party dependency and fees while keeping you in control of the customer relationship.</p>
+            </div>
+            
+            <div class="solution-card">
+                <h3>Gamified Loyalty Program</h3>
+                <p>Engage customers with a fully customizable rewards system featuring points, challenges, and achievements that drives repeat business and increases customer lifetime value.</p>
+            </div>
+            
+            <div class="solution-card">
+                <h3>All-in-One Experience</h3>
+                <p>One app for ordering, reservations, loyalty and rewards at multiple participating restaurants.</p>
+            </div> -->
+        </div>
     </section>
 
-    <div class="quote-section">
+    <div class="quote-section final-cta">
         <div class="hero-message">
-            CraveClub helps customers rediscover their favourite restaurants in their online journey
+            Ready to build <span class="highlight-1">customer loyalty</span> and <span class="highlight-1">boost revenue</span>? Get started today.
         </div>
-        <!-- <img src="assets/espresso_digital_marketing.png" alt="Digital Marketing Illustration" style="max-width: 400px;"> -->
     </div>
 
-    <section id="customer-experience">
-        <h2 class="section-heading">Unlock New Customer Value</h2>
+    <section id="contact">
+        <h2 class="section-heading">Contact Us</h2>
         
-        <div class="value-cards">
-            <div class="value-card">
-                <h3>Simplified Loyalty Programs</h3>
-                <p>Rewards and redemptions available on the app</p>
-            </div>
-            
-            <div class="value-card">
-                <h3>Community Engagement</h3>
-                <p>Become a part of an active community of food lovers with access to exclusive rewards</p>
-            </div>
-            
-            <div class="value-card">
-                <h3>The One-Stop App</h3>
-                <p>A single app for a customer's favourite restaurants and needs</p>
-            </div>
-            
-            <div class="value-card">
-                <h3>Pay with Points</h3>
-                <p>Customers can earn and redeem points across their favourite restaurants</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="hero-message">
-        Restaurants can now <span class="highlight-2">STAY FULLY CONNECTED</span> with their most valuable customers, addressing <span class="highlight-3">ALL THEIR NEEDS</span> and building a mutually beneficial relationship.
-    </div>
-
-    <section id="contact" class="contact-section">
-        <h2 class="section-heading">Reach out to us</h2>
         <div class="contact-form-container">
-            <form action="https://formsubmit.co/thecoffeeplaces@gmail.com" method="POST" class="contact-form">
+            <form class="contact-form" action="https://formsubmit.co/prakhar@aglioapp.com" method="POST">
                 <div class="form-group">
-                    <input type="text" name="name" placeholder="Restaurant Name">
+                    <input type="text" name="business" placeholder="Restaurant Name" required
+                           autocomplete="organization">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="contact_person" placeholder="Name" required>
+                    <input type="text" name="contact_person" placeholder="Contact Person" required
+                           autocomplete="name">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Business Email" required
+                           autocomplete="email"
+                           inputmode="email">
                 </div>
                 <div class="form-group">
                     <input type="tel" name="phone" placeholder="Phone (e.g., +91XXXXXXXXXX)" 
+                           pattern="^\+[1-9]\d{1,14}$" 
                            title="Please enter phone number with country code (e.g., +91XXXXXXXXXX)"
-                           required>
+                           required
+                           autocomplete="tel"
+                           inputmode="tel">
                 </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Message" rows="3"></textarea>
+                <div class="form-group full-width">
+                    <textarea name="message" rows="4" placeholder="Tell us about your restaurant and what you're looking for"
+                              inputmode="text"></textarea>
                 </div>
-                <button type="submit" class="submit-button">
-                    <span>Send Message</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
+                <button type="submit" class="submit-button">Request a Demo <i class="fas fa-arrow-right"></i></button>
             </form>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="contact-info">
-                <a href="mailto:nrtrrapp@gmail.com"><i class="fas fa-envelope"></i> nrtrrapp@gmail.com</a>
-                <a href="https://prakhar1114.github.io/prakharjain/" target="_blank"><i class="fas fa-globe"></i> Visit Founder's Portfolio</a>
+            <div class="footer-logo">
+                <a href="#" class="logo">aglio</a>
+                <!-- <p>Building restaurant loyalty in competitive landscape</p> -->
+                <a href="mailto:prakhar@aglioapp.com" class="founder-link"><i class="fas fa-envelope"></i> prakhar@aglioapp.com</a>
+                <a href="https://prakhar1114.github.io/prakharjain/" target="_blank" class="founder-link">Visit Founder's Portfolio</a>
             </div>
             <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="index_v1.html">Legacy Website</a>
-                <p>© 2025 CraveClub</p>
+                <p>© 2025 aglio</p>
             </div>
         </div>
     </footer>
@@ -222,30 +179,22 @@
             closeMobileMenu();
         }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').slice(1);
-                const targetElement = document.getElementById(targetId);
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                closeMobileMenu();
-            });
-        });
-
         // Mobile menu functionality
         const hamburgerButton = document.querySelector('.hamburger-menu');
         const mobileMenu = document.querySelector('.mobile-menu');
         const body = document.body;
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 
         function toggleMobileMenu() {
             hamburgerButton.classList.toggle('active');
             mobileMenu.classList.toggle('active');
             body.classList.toggle('menu-open');
         }
+
+        // Close mobile menu when clicking on a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
 
         function closeMobileMenu() {
             hamburgerButton.classList.remove('active');
@@ -254,6 +203,22 @@
         }
 
         hamburgerButton.addEventListener('click', toggleMobileMenu);
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html> 
